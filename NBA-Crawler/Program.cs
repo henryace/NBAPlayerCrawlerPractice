@@ -13,43 +13,49 @@ namespace NBA_Crawler
         {
             HttpClient httpClient = new HttpClient();
 
-            string url = "https://www.basketball-reference.com/players/";
+            string homeUrl = "https://www.basketball-reference.com";
+            string url = homeUrl + "/players/";
             string initial = "a/";
             string newurl = url + initial;
+
+            // 使用AngleSharp時的前置設定
+            var config = Configuration.Default;
+            var context = BrowsingContext.New(config);
 
             var responseMessage = await httpClient.GetAsync(newurl); //發送請求
 
             //檢查回應的伺服器狀態StatusCode是否是200 OK
             if (responseMessage.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                // .Result return string without Task
                 string response = responseMessage.Content.ReadAsStringAsync().Result;//取得內容
 
-                Console.WriteLine(response);
-
-                // 使用AngleSharp時的前置設定
-                var config = Configuration.Default;
-                var context = BrowsingContext.New(config);
-
-                //將我們用httpclient拿到的資料放入res.Content中())
                 var document = await context.OpenAsync(res => res.Content(response));
+                var matches = document.QuerySelectorAll("#players > tbody > tr").Select(m => m.QuerySelector("a").GetAttribute("href")).ToList();
 
-                //QuerySelector("head")找出<head></head>元素
-                //var head = document.QuerySelector("#players > tbody");
-                //Console.WriteLine(head.ToHtml());
 
-                //QuerySelector(".entry-content")找出class="entry-content"的所有元素
-                //var matches = document.QuerySelectorAll("#players > tbody > tr")
+                var responseMessage2 = await httpClient.GetAsync(homeUrl + "/" + matches[0]); //發送請求
 
-                //foreach (var c in matches)
-                //{
-                //    //取得每個元素的TextContent
-                //    var test = c.QuerySelector("a").GetAttribute("href");
-                //    Console.WriteLine(test);
-                //}
-                var matches = document.QuerySelectorAll("#players > tbody > tr").Select(m => m.QuerySelector("a").GetAttribute("href"));
+                //檢查回應的伺服器狀態StatusCode是否是200 OK
+                if (responseMessage2.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    string response2 = responseMessage2.Content.ReadAsStringAsync().Result;//取得內容
+
+                    var document2 = await context.OpenAsync(res => res.Content(response2));
+
+                    var name = document2.DocumentElement.OuterHtml;
+
+                    var matches3 = document2.QuerySelectorAll("#info > div.stats_pullout");
+                    //var matches4 = matches3.QuerySelectorAll("h4");
+
+
+                    //var matches3 = document.QuerySelectorAll("#info > div.stats_pullout").Select(m => m.QuerySelector("h4")).ToList();
+                    Console.WriteLine("test");
+                }
 
             }
+
+
+            
 
             Console.ReadKey();
         }

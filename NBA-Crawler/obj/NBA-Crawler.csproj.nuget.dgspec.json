@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GitLab\\NBA-Core-Crawler\\NBA-Crawler\\NBA-Crawler.csproj": {}
+    "C:\\GitLab\\NBAPlayerCrawlerPractice\\NBA-Crawler\\NBA-Crawler.csproj": {}
   },
   "projects": {
-    "C:\\GitLab\\NBA-Core-Crawler\\NBA-Crawler\\NBA-Crawler.csproj": {
+    "C:\\GitLab\\NBAPlayerCrawlerPractice\\NBA-Crawler\\NBA-Crawler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GitLab\\NBA-Core-Crawler\\NBA-Crawler\\NBA-Crawler.csproj",
+        "projectUniqueName": "C:\\GitLab\\NBAPlayerCrawlerPractice\\NBA-Crawler\\NBA-Crawler.csproj",
         "projectName": "NBA-Crawler",
-        "projectPath": "C:\\GitLab\\NBA-Core-Crawler\\NBA-Crawler\\NBA-Crawler.csproj",
+        "projectPath": "C:\\GitLab\\NBAPlayerCrawlerPractice\\NBA-Crawler\\NBA-Crawler.csproj",
         "packagesPath": "C:\\Users\\Henrychiang\\.nuget\\packages\\",
-        "outputPath": "C:\\GitLab\\NBA-Core-Crawler\\NBA-Crawler\\obj\\",
+        "outputPath": "C:\\GitLab\\NBAPlayerCrawlerPractice\\NBA-Crawler\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
