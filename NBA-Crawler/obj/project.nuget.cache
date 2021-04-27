@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "pm2ZWzKtBTf+JmqYoThKnjSSOPdLo7PjE7EqmzdCyTzl00qEAurZ8bFx4n9DIF8pe+1bvHwgCnwfsC76wkDWLg==",
+  "success": true,
+  "projectFilePath": "C:\\GitLab\\NBA-Core-Crawler\\NBA-Crawler\\NBA-Crawler.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Henrychiang\\.nuget\\packages\\anglesharp\\0.15.0\\anglesharp.0.15.0.nupkg.sha512",
+    "C:\\Users\\Henrychiang\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Henrychiang\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
